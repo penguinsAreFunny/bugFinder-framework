@@ -2,8 +2,8 @@
   "name": "bugfinder-framework",
   "version": "1.0.0",
   "description": "Framework used to research bug correlations to quantifications of software artefacts and automatically find bugs with machine learning methods",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc --project .",
     "clean": "rimraf ./dist",
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/penguinsAreFunny/bugFinder-framework/issues"
   },
-  "files": ["./dist/**/*"],
+  "files": ["dist/**/*"],
   "author": "Robert Klinger",
   "keyword": "bugfinder",
   "license": "ISC",
