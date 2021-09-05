@@ -11,7 +11,6 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-export declare const BUGFINDER_FRAMEWORK_SHARED_TYPES: {
-    localityRecorder: symbol;
-    projectRoot: symbol;
+export declare const BUGFINDER_SHARED_TYPES: {
+    db: symbol;
 };

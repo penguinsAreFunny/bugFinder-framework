@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BUGFINDER_FRAMEWORK_SHARED_TYPES = void 0;
+exports.BUGFINDER_SHARED_TYPES = void 0;
 /**
  * LOCALITY_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -15,8 +15,7 @@ exports.BUGFINDER_FRAMEWORK_SHARED_TYPES = void 0;
  *
  */
 // @Formatter:off
-exports.BUGFINDER_FRAMEWORK_SHARED_TYPES = {
-    localityRecorder: Symbol.for("LocalityRecorder"),
-    projectRoot: Symbol.for("ProjectRoot"),
+exports.BUGFINDER_SHARED_TYPES = {
+    db: Symbol.for("DB")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvMDAtc2hhcmVkL1RZUEVTLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBOzs7Ozs7Ozs7Ozs7R0FZRztBQUNILGlCQUFpQjtBQUNKLFFBQUEsZ0NBQWdDLEdBQUc7SUFDNUMsZ0JBQWdCLEVBQVksTUFBTSxDQUFDLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQztJQUMxRCxXQUFXLEVBQWlCLE1BQU0sQ0FBQyxHQUFHLENBQUMsYUFBYSxDQUFDO0NBQ3hELENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvMDAtc2hhcmVkL1RZUEVTLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBOzs7Ozs7Ozs7Ozs7R0FZRztBQUNILGlCQUFpQjtBQUNKLFFBQUEsc0JBQXNCLEdBQUc7SUFDbEMsRUFBRSxFQUFFLE1BQU0sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDO0NBQ3ZCLENBQUMifQ==
