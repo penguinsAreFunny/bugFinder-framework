@@ -12,8 +12,7 @@
  *
  */
 // @Formatter:off
-export const BUGFINDER_FRAMEWORK_SHARED_TYPES = {
-    localityRecorder:           Symbol.for("LocalityRecorder"),
-    projectRoot:                Symbol.for("ProjectRoot"),
+export const BUGFINDER_SHARED_TYPES = {
+    db: Symbol.for("DB")
 };
 
