@@ -17,6 +17,6 @@ export const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES = {
     projectRoot:                Symbol.for("ProjectRoot"),
 };
 
-export const LOCALITY_B_TYPES = {
+export const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES = {
     localityPreprocessor:       Symbol.for("LocalityPreprocessor")
 }
