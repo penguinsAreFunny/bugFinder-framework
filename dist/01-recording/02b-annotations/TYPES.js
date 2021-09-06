@@ -16,10 +16,10 @@ exports.ANNOTATOR_TYPES = void 0;
  */
 // @Formatter:off
 exports.ANNOTATOR_TYPES = {
-    annotatorMain: Symbol.for("AnnotatorMain"),
-    annotator: Symbol.for("Annotator"),
-    dbLocalities: Symbol.for("DBLocalities"),
-    dbAnnotations: Symbol.for("DBAnnotations"),
-    annotationFactory: Symbol.for("AnnotationFactory")
+    annotatorMain: Symbol("AnnotatorMain"),
+    annotator: Symbol("Annotator"),
+    dbLocalities: Symbol("DBLocalities"),
+    dbAnnotations: Symbol("DBAnnotations"),
+    annotationFactory: Symbol("AnnotationFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCxpQkFBaUI7QUFDSixRQUFBLGVBQWUsR0FBRztJQUMzQixhQUFhLEVBQU8sTUFBTSxDQUFDLEdBQUcsQ0FBQyxlQUFlLENBQUM7SUFDL0MsU0FBUyxFQUFXLE1BQU0sQ0FBQyxHQUFHLENBQUMsV0FBVyxDQUFDO0lBQzNDLFlBQVksRUFBUSxNQUFNLENBQUMsR0FBRyxDQUFDLGNBQWMsQ0FBQztJQUM5QyxhQUFhLEVBQU8sTUFBTSxDQUFDLEdBQUcsQ0FBQyxlQUFlLENBQUM7SUFDL0MsaUJBQWlCLEVBQUcsTUFBTSxDQUFDLEdBQUcsQ0FBQyxtQkFBbUIsQ0FBQztDQUN0RCxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCxpQkFBaUI7QUFDSixRQUFBLGVBQWUsR0FBRztJQUMzQixhQUFhLEVBQU8sTUFBTSxDQUFDLGVBQWUsQ0FBQztJQUMzQyxTQUFTLEVBQVcsTUFBTSxDQUFDLFdBQVcsQ0FBQztJQUN2QyxZQUFZLEVBQVEsTUFBTSxDQUFDLGNBQWMsQ0FBQztJQUMxQyxhQUFhLEVBQU8sTUFBTSxDQUFDLGVBQWUsQ0FBQztJQUMzQyxpQkFBaUIsRUFBRyxNQUFNLENBQUMsbUJBQW1CLENBQUM7Q0FDbEQsQ0FBQyJ9

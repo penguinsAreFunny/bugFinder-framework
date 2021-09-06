@@ -16,9 +16,9 @@ exports.QUANTIFIER_TYPES = void 0;
  */
 // @Formatter:off
 exports.QUANTIFIER_TYPES = {
-    quantifier: Symbol.for("Quantifier"),
-    dbLocalities: Symbol.for("DBLocalities"),
-    dbQuantification: Symbol.for("DBQuantification"),
-    quantificationFactory: Symbol.for("QuantificationFactory")
+    quantifier: Symbol("Quantifier"),
+    dbLocalities: Symbol("DBLocalities"),
+    dbQuantification: Symbol("DBQuantification"),
+    quantificationFactory: Symbol("QuantificationFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYS1xdWFudGlmaWNhdGlvbnMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixVQUFVLEVBQWMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxZQUFZLENBQUM7SUFDaEQsWUFBWSxFQUFZLE1BQU0sQ0FBQyxHQUFHLENBQUMsY0FBYyxDQUFDO0lBQ2xELGdCQUFnQixFQUFRLE1BQU0sQ0FBQyxHQUFHLENBQUMsa0JBQWtCLENBQUM7SUFDdEQscUJBQXFCLEVBQUcsTUFBTSxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQztDQUM5RCxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYS1xdWFudGlmaWNhdGlvbnMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixVQUFVLEVBQWMsTUFBTSxDQUFDLFlBQVksQ0FBQztJQUM1QyxZQUFZLEVBQVksTUFBTSxDQUFDLGNBQWMsQ0FBQztJQUM5QyxnQkFBZ0IsRUFBUSxNQUFNLENBQUMsa0JBQWtCLENBQUM7SUFDbEQscUJBQXFCLEVBQUcsTUFBTSxDQUFDLHVCQUF1QixDQUFDO0NBQzFELENBQUMifQ==
