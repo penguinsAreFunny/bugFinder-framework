@@ -15,6 +15,6 @@ export declare const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES: {
     localityRecorder: symbol;
     projectRoot: symbol;
 };
-export declare const LOCALITY_B_TYPES: {
+export declare const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES: {
     localityPreprocessor: symbol;
 };
