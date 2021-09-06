@@ -13,9 +13,9 @@
  */
 // @Formatter:off
 export const ANNOTATOR_TYPES = {
-    annotatorMain:      Symbol.for("AnnotatorMain"),
-    annotator:          Symbol.for("Annotator"),
-    dbLocalities:       Symbol.for("DBLocalities"),
-    dbAnnotations:      Symbol.for("DBAnnotations"),
-    annotationFactory:  Symbol.for("AnnotationFactory")
+    annotatorMain:      Symbol("AnnotatorMain"),
+    annotator:          Symbol("Annotator"),
+    dbLocalities:       Symbol("DBLocalities"),
+    dbAnnotations:      Symbol("DBAnnotations"),
+    annotationFactory:  Symbol("AnnotationFactory")
 };

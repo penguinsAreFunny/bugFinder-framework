@@ -13,10 +13,11 @@
  */
 // @Formatter:off
 export const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES = {
-    localityRecorder:           Symbol.for("LocalityRecorder"),
-    projectRoot:                Symbol.for("ProjectRoot"),
+    localityRecorder:           Symbol("LocalityRecorder"),
+    projectRoot:                Symbol("ProjectRoot"),
 };
 
 export const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES = {
-    localityPreprocessor:       Symbol.for("LocalityPreprocessor")
+    localityPreprocessor:       Symbol("LocalityPreprocessor"),
+    db:                         Symbol("DB")
 }

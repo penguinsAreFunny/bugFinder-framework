@@ -13,9 +13,9 @@
  */
 // @Formatter:off
 export const QUANTIFIER_TYPES = {
-    quantifier:             Symbol.for("Quantifier"),
-    dbLocalities:           Symbol.for("DBLocalities"),
-    dbQuantification:       Symbol.for("DBQuantification"),
-    quantificationFactory:  Symbol.for("QuantificationFactory")
+    quantifier:             Symbol("Quantifier"),
+    dbLocalities:           Symbol("DBLocalities"),
+    dbQuantification:       Symbol("DBQuantification"),
+    quantificationFactory:  Symbol("QuantificationFactory")
 };
 
