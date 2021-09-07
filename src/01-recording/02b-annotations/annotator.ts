@@ -3,8 +3,9 @@ import {Locality} from "../01-localities/locality";
 export interface Annotator<L extends Locality, Annotation> {
 
     /**
-     * Annotates one single locality with a number
-     * @param locality
+     * Annotates all localities with a number
+     * Annotations may be calculated with more than just 1 locality
+     * @param localities
      */
-    annotate(locality: L): Annotation;
+    annotate(localities: L[]): Annotation;
 }
