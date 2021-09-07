@@ -14,8 +14,10 @@
 export declare const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES: {
     localityRecorder: symbol;
     projectRoot: symbol;
+    db: symbol;
 };
 export declare const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES: {
     localityPreprocessor: symbol;
     db: symbol;
+    db2: symbol;
 };
