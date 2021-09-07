@@ -12,10 +12,9 @@
  *
  */
 // @Formatter:off
-export const QUANTIFIER_TYPES = {
+export const BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = {
     quantifier:             Symbol("Quantifier"),
-    dbLocalities:           Symbol("DBLocalities"),
-    dbQuantification:       Symbol("DBQuantification"),
+    db:                     Symbol("DB"),
     quantificationFactory:  Symbol("QuantificationFactory")
 };
 

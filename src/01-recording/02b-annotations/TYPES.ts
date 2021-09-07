@@ -12,7 +12,7 @@
  *
  */
 // @Formatter:off
-export const ANNOTATOR_TYPES = {
+export const BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES = {
     annotator:          Symbol("Annotator"),
     db:                 Symbol("DB"),
     annotationFactory:  Symbol("AnnotationFactory")
