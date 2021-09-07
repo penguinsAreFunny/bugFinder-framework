@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ANNOTATOR_TYPES = void 0;
+exports.BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES = void 0;
 /**
  * ANNOTATOR_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -15,9 +15,9 @@ exports.ANNOTATOR_TYPES = void 0;
  *
  */
 // @Formatter:off
-exports.ANNOTATOR_TYPES = {
+exports.BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES = {
     annotator: Symbol("Annotator"),
     db: Symbol("DB"),
     annotationFactory: Symbol("AnnotationFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCxpQkFBaUI7QUFDSixRQUFBLGVBQWUsR0FBRztJQUMzQixTQUFTLEVBQVcsTUFBTSxDQUFDLFdBQVcsQ0FBQztJQUN2QyxFQUFFLEVBQWtCLE1BQU0sQ0FBQyxJQUFJLENBQUM7SUFDaEMsaUJBQWlCLEVBQUcsTUFBTSxDQUFDLG1CQUFtQixDQUFDO0NBQ2xELENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCxpQkFBaUI7QUFDSixRQUFBLG1DQUFtQyxHQUFHO0lBQy9DLFNBQVMsRUFBVyxNQUFNLENBQUMsV0FBVyxDQUFDO0lBQ3ZDLEVBQUUsRUFBa0IsTUFBTSxDQUFDLElBQUksQ0FBQztJQUNoQyxpQkFBaUIsRUFBRyxNQUFNLENBQUMsbUJBQW1CLENBQUM7Q0FDbEQsQ0FBQyJ9

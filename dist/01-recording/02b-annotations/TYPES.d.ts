@@ -11,7 +11,7 @@
  * and instance to be injected (Symbol("Project")) at the beginning of DI.
  *
  */
-export declare const ANNOTATOR_TYPES: {
+export declare const BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES: {
     annotator: symbol;
     db: symbol;
     annotationFactory: symbol;

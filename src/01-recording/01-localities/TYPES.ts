@@ -15,9 +15,11 @@
 export const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES = {
     localityRecorder:           Symbol("LocalityRecorder"),
     projectRoot:                Symbol("ProjectRoot"),
+    db:                         Symbol("DB")
 };
 
 export const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES = {
     localityPreprocessor:       Symbol("LocalityPreprocessor"),
-    db:                         Symbol("DB")
+    db:                         Symbol("DB"),
+    db2:                        Symbol("DB2")
 }

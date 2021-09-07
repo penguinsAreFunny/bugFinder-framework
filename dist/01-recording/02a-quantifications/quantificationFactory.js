@@ -18,28 +18,21 @@ var QuantificationFactory = /** @class */ (function () {
     QuantificationFactory.prototype.createQuantifier = function () {
         return this.quantifier;
     };
-    QuantificationFactory.prototype.createDBLocalities = function () {
-        return this.dbLocalities;
-    };
-    QuantificationFactory.prototype.createDBQuantification = function () {
-        return this.dbQuantification;
+    QuantificationFactory.prototype.createDB = function () {
+        return this.db;
     };
     __decorate([
-        (0, inversify_1.inject)(TYPES_1.QUANTIFIER_TYPES.quantifier),
+        (0, inversify_1.inject)(TYPES_1.BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES.quantifier),
         __metadata("design:type", Object)
     ], QuantificationFactory.prototype, "quantifier", void 0);
     __decorate([
-        (0, inversify_1.inject)(TYPES_1.QUANTIFIER_TYPES.dbLocalities),
+        (0, inversify_1.inject)(TYPES_1.BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES.db),
         __metadata("design:type", Object)
-    ], QuantificationFactory.prototype, "dbLocalities", void 0);
-    __decorate([
-        (0, inversify_1.inject)(TYPES_1.QUANTIFIER_TYPES.dbQuantification),
-        __metadata("design:type", Object)
-    ], QuantificationFactory.prototype, "dbQuantification", void 0);
+    ], QuantificationFactory.prototype, "db", void 0);
     QuantificationFactory = __decorate([
         (0, inversify_1.injectable)()
     ], QuantificationFactory);
     return QuantificationFactory;
 }());
 exports.QuantificationFactory = QuantificationFactory;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicXVhbnRpZmljYXRpb25GYWN0b3J5LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjLzAxLXJlY29yZGluZy8wMmEtcXVhbnRpZmljYXRpb25zL3F1YW50aWZpY2F0aW9uRmFjdG9yeS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFFQSx1Q0FBNkM7QUFDN0MsaUNBQXlDO0FBS3pDO0lBQUE7SUFxQkEsQ0FBQztJQVhHLGdEQUFnQixHQUFoQjtRQUNJLE9BQU8sSUFBSSxDQUFDLFVBQVUsQ0FBQTtJQUMxQixDQUFDO0lBRUQsa0RBQWtCLEdBQWxCO1FBQ0ksT0FBTyxJQUFJLENBQUMsWUFBWSxDQUFDO0lBQzdCLENBQUM7SUFFRCxzREFBc0IsR0FBdEI7UUFDSSxPQUFPLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQztJQUNqQyxDQUFDO0lBbEJEO1FBREMsSUFBQSxrQkFBTSxFQUFDLHdCQUFnQixDQUFDLFVBQVUsQ0FBQzs7NkRBQ007SUFHMUM7UUFEQyxJQUFBLGtCQUFNLEVBQUMsd0JBQWdCLENBQUMsWUFBWSxDQUFDOzsrREFDVDtJQUc3QjtRQURDLElBQUEsa0JBQU0sRUFBQyx3QkFBZ0IsQ0FBQyxnQkFBZ0IsQ0FBQzs7bUVBQ1k7SUFSN0MscUJBQXFCO1FBRGpDLElBQUEsc0JBQVUsR0FBRTtPQUNBLHFCQUFxQixDQXFCakM7SUFBRCw0QkFBQztDQUFBLEFBckJELElBcUJDO0FBckJZLHNEQUFxQiJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicXVhbnRpZmljYXRpb25GYWN0b3J5LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjLzAxLXJlY29yZGluZy8wMmEtcXVhbnRpZmljYXRpb25zL3F1YW50aWZpY2F0aW9uRmFjdG9yeS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFFQSx1Q0FBNkM7QUFDN0MsaUNBQTZEO0FBSTdEO0lBQUE7SUFjQSxDQUFDO0lBUEcsZ0RBQWdCLEdBQWhCO1FBQ0ksT0FBTyxJQUFJLENBQUMsVUFBVSxDQUFBO0lBQzFCLENBQUM7SUFFRCx3Q0FBUSxHQUFSO1FBQ0ksT0FBTyxJQUFJLENBQUMsRUFBRSxDQUFDO0lBQ25CLENBQUM7SUFYRDtRQURDLElBQUEsa0JBQU0sRUFBQyw0Q0FBb0MsQ0FBQyxVQUFVLENBQUM7OzZEQUNkO0lBRzFDO1FBREMsSUFBQSxrQkFBTSxFQUFDLDRDQUFvQyxDQUFDLEVBQUUsQ0FBQzs7cURBQ2pCO0lBTHRCLHFCQUFxQjtRQURqQyxJQUFBLHNCQUFVLEdBQUU7T0FDQSxxQkFBcUIsQ0FjakM7SUFBRCw0QkFBQztDQUFBLEFBZEQsSUFjQztBQWRZLHNEQUFxQiJ9

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QUANTIFIER_TYPES = void 0;
+exports.BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = void 0;
 /**
  * LOCALITY_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -15,10 +15,9 @@ exports.QUANTIFIER_TYPES = void 0;
  *
  */
 // @Formatter:off
-exports.QUANTIFIER_TYPES = {
+exports.BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = {
     quantifier: Symbol("Quantifier"),
-    dbLocalities: Symbol("DBLocalities"),
-    dbQuantification: Symbol("DBQuantification"),
+    db: Symbol("DB"),
     quantificationFactory: Symbol("QuantificationFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYS1xdWFudGlmaWNhdGlvbnMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixVQUFVLEVBQWMsTUFBTSxDQUFDLFlBQVksQ0FBQztJQUM1QyxZQUFZLEVBQVksTUFBTSxDQUFDLGNBQWMsQ0FBQztJQUM5QyxnQkFBZ0IsRUFBUSxNQUFNLENBQUMsa0JBQWtCLENBQUM7SUFDbEQscUJBQXFCLEVBQUcsTUFBTSxDQUFDLHVCQUF1QixDQUFDO0NBQzFELENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYS1xdWFudGlmaWNhdGlvbnMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSxvQ0FBb0MsR0FBRztJQUNoRCxVQUFVLEVBQWMsTUFBTSxDQUFDLFlBQVksQ0FBQztJQUM1QyxFQUFFLEVBQXNCLE1BQU0sQ0FBQyxJQUFJLENBQUM7SUFDcEMscUJBQXFCLEVBQUcsTUFBTSxDQUFDLHVCQUF1QixDQUFDO0NBQzFELENBQUMifQ==

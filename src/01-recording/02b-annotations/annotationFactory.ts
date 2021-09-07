@@ -1,15 +1,15 @@
 import {Locality} from "../01-localities/locality";
 import {inject, injectable} from "inversify";
-import {ANNOTATOR_TYPES} from "./TYPES";
 import {Annotator} from "./annotator";
-import {BUGFINDER_SHARED_TYPES, DB} from "../../00-shared";
+import {DB} from "../../00-shared";
+import {BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES} from "./TYPES";
 
 @injectable()
 export class AnnotationFactory<L extends Locality, Annotation> {
-    @inject(ANNOTATOR_TYPES.annotator)
+    @inject(BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES.annotator)
     annotator: Annotator<L, Annotation>
 
-    @inject(BUGFINDER_SHARED_TYPES.db)
+    @inject(BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES.db)
     db: DB<L, Annotation, any>
 
     createDB(): DB<L, Annotation, any>{

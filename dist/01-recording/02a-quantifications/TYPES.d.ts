@@ -11,9 +11,8 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-export declare const QUANTIFIER_TYPES: {
+export declare const BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES: {
     quantifier: symbol;
-    dbLocalities: symbol;
-    dbQuantification: symbol;
+    db: symbol;
     quantificationFactory: symbol;
 };
