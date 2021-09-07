@@ -9,37 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuantificationFactory = void 0;
+exports.AnnotationFactory = void 0;
 var inversify_1 = require("inversify");
 var TYPES_1 = require("./TYPES");
-var QuantificationFactory = /** @class */ (function () {
-    function QuantificationFactory() {
+var _00_shared_1 = require("../../00-shared");
+var AnnotationFactory = /** @class */ (function () {
+    function AnnotationFactory() {
     }
-    QuantificationFactory.prototype.createQuantifier = function () {
-        return this.annotatorMain;
+    AnnotationFactory.prototype.createDB = function () {
+        return this.db;
     };
-    QuantificationFactory.prototype.createDBLocalities = function () {
-        return this.dbLocalities;
-    };
-    QuantificationFactory.prototype.createDBQuantification = function () {
-        return this.dbAnnotations;
+    AnnotationFactory.prototype.createAnnotator = function () {
+        return this.annotator;
     };
     __decorate([
-        (0, inversify_1.inject)(TYPES_1.ANNOTATOR_TYPES.annotatorMain),
+        (0, inversify_1.inject)(TYPES_1.ANNOTATOR_TYPES.annotator),
         __metadata("design:type", Object)
-    ], QuantificationFactory.prototype, "annotatorMain", void 0);
+    ], AnnotationFactory.prototype, "annotator", void 0);
     __decorate([
-        (0, inversify_1.inject)(TYPES_1.ANNOTATOR_TYPES.dbLocalities),
+        (0, inversify_1.inject)(_00_shared_1.BUGFINDER_SHARED_TYPES.db),
         __metadata("design:type", Object)
-    ], QuantificationFactory.prototype, "dbLocalities", void 0);
-    __decorate([
-        (0, inversify_1.inject)(TYPES_1.ANNOTATOR_TYPES.dbAnnotations),
-        __metadata("design:type", Object)
-    ], QuantificationFactory.prototype, "dbAnnotations", void 0);
-    QuantificationFactory = __decorate([
+    ], AnnotationFactory.prototype, "db", void 0);
+    AnnotationFactory = __decorate([
         (0, inversify_1.injectable)()
-    ], QuantificationFactory);
-    return QuantificationFactory;
+    ], AnnotationFactory);
+    return AnnotationFactory;
 }());
-exports.QuantificationFactory = QuantificationFactory;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW5ub3RhdGlvbkZhY3RvcnkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9hbm5vdGF0aW9uRmFjdG9yeS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFDQSx1Q0FBNkM7QUFFN0MsaUNBQXdDO0FBS3hDO0lBQUE7SUFxQkEsQ0FBQztJQVhHLGdEQUFnQixHQUFoQjtRQUNJLE9BQU8sSUFBSSxDQUFDLGFBQWEsQ0FBQztJQUM5QixDQUFDO0lBRUQsa0RBQWtCLEdBQWxCO1FBQ0ksT0FBTyxJQUFJLENBQUMsWUFBWSxDQUFDO0lBQzdCLENBQUM7SUFFRCxzREFBc0IsR0FBdEI7UUFDSSxPQUFPLElBQUksQ0FBQyxhQUFhLENBQUM7SUFDOUIsQ0FBQztJQWxCRDtRQURDLElBQUEsa0JBQU0sRUFBQyx1QkFBZSxDQUFDLGFBQWEsQ0FBQzs7Z0VBQ007SUFHNUM7UUFEQyxJQUFBLGtCQUFNLEVBQUMsdUJBQWUsQ0FBQyxZQUFZLENBQUM7OytEQUNSO0lBRzdCO1FBREMsSUFBQSxrQkFBTSxFQUFDLHVCQUFlLENBQUMsYUFBYSxDQUFDOztnRUFDSztJQVJsQyxxQkFBcUI7UUFEakMsSUFBQSxzQkFBVSxHQUFFO09BQ0EscUJBQXFCLENBcUJqQztJQUFELDRCQUFDO0NBQUEsQUFyQkQsSUFxQkM7QUFyQlksc0RBQXFCIn0=
+exports.AnnotationFactory = AnnotationFactory;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW5ub3RhdGlvbkZhY3RvcnkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9hbm5vdGF0aW9uRmFjdG9yeS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFDQSx1Q0FBNkM7QUFDN0MsaUNBQXdDO0FBRXhDLDhDQUEyRDtBQUczRDtJQUFBO0lBY0EsQ0FBQztJQVBHLG9DQUFRLEdBQVI7UUFDSSxPQUFPLElBQUksQ0FBQyxFQUFFLENBQUE7SUFDbEIsQ0FBQztJQUVELDJDQUFlLEdBQWY7UUFDSSxPQUFPLElBQUksQ0FBQyxTQUFTLENBQUE7SUFDekIsQ0FBQztJQVhEO1FBREMsSUFBQSxrQkFBTSxFQUFDLHVCQUFlLENBQUMsU0FBUyxDQUFDOzt3REFDQztJQUduQztRQURDLElBQUEsa0JBQU0sRUFBQyxtQ0FBc0IsQ0FBQyxFQUFFLENBQUM7O2lEQUNSO0lBTGpCLGlCQUFpQjtRQUQ3QixJQUFBLHNCQUFVLEdBQUU7T0FDQSxpQkFBaUIsQ0FjN0I7SUFBRCx3QkFBQztDQUFBLEFBZEQsSUFjQztBQWRZLDhDQUFpQiJ9
