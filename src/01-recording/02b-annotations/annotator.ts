@@ -1,4 +1,5 @@
 import {Locality} from "../01-localities/locality";
+import {LocalityMap} from "../01-localities";
 
 export interface Annotator<L extends Locality, Annotation> {
 
@@ -7,5 +8,5 @@ export interface Annotator<L extends Locality, Annotation> {
      * Annotations may be calculated with more than just 1 locality
      * @param localities
      */
-    annotate(localities: L[]): Annotation;
+    annotate(localities: L[]): LocalityMap<L, Annotation>;
 }
