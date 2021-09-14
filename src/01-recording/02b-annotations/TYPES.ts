@@ -11,9 +11,13 @@
  * and instance to be injected (Symbol("Project")) at the beginning of DI.
  *
  */
+import {Container} from "inversify";
+
 // @Formatter:off
 export const BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES = {
     annotator:          Symbol("Annotator"),
     db:                 Symbol("DB"),
     annotationFactory:  Symbol("AnnotationFactory")
 };
+
+export const container = new Container()

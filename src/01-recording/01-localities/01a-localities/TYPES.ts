@@ -11,15 +11,12 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
+import {Container} from "inversify";
+
 // @Formatter:off
 export const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES = {
     localityRecorder:           Symbol("LocalityRecorder"),
-    projectRoot:                Symbol("ProjectRoot"),
     db:                         Symbol("DB")
 };
 
-export const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES = {
-    localityPreprocessor:       Symbol("LocalityPreprocessor"),
-    db:                         Symbol("DB"),
-    db2:                        Symbol("DB2")
-}
+export const container = new Container()

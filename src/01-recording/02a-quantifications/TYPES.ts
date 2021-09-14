@@ -11,6 +11,8 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
+import {Container} from "inversify";
+
 // @Formatter:off
 export const BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = {
     quantifier:             Symbol("Quantifier"),
@@ -18,3 +20,4 @@ export const BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = {
     quantificationFactory:  Symbol("QuantificationFactory")
 };
 
+export const container = new Container()
