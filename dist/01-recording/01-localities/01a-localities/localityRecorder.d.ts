@@ -1,4 +1,4 @@
-import { Locality } from "../locality";
+import { Locality } from "./locality";
 export interface LocalityRecorder<L extends Locality> {
     /**
      * Returns an array of Localities to be annotated and quantified in further processing.

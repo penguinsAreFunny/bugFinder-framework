@@ -14,10 +14,10 @@
 import {Container} from "inversify";
 
 // @Formatter:off
-export const BUGFINDER_FRAMEWORK_ANNOTATOR_TYPES = {
+export const ANNOTATOR_TYPES = {
     annotator:          Symbol("Annotator"),
     db:                 Symbol("DB"),
     annotationFactory:  Symbol("AnnotationFactory")
 };
 
-export const container = new Container()
+export const annotatorContainer = new Container()

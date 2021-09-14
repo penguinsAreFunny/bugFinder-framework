@@ -14,10 +14,10 @@
 import {Container} from "inversify";
 
 // @Formatter:off
-export const BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES = {
+export const QUANTIFIER_TYPES = {
     quantifier:             Symbol("Quantifier"),
     db:                     Symbol("DB"),
     quantificationFactory:  Symbol("QuantificationFactory")
 };
 
-export const container = new Container()
+export const quantifierContainer = new Container()

@@ -1,8 +1,8 @@
 /**
  * Interface for writing and reading 0-localities from and to database
  */
-import { Locality } from "../../01-recording/01-localities/locality";
-import { LocalityMap } from "../../01-recording/01-localities";
+import { Locality } from "../../01-recording/01-localities/01a-localities/locality";
+import { LocalityMap } from "../../01-recording/01-localities/01a-localities/locality/localityMap";
 export interface DB<L extends Locality, Annotation, Quantification> {
     /**
      * Reads an array of Localities from DB

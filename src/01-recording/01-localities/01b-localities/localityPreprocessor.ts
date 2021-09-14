@@ -1,4 +1,4 @@
-import {Locality} from "../locality";
+import {Locality} from "../01a-localities/locality";
 
 export interface LocalityPreprocessor<L extends Locality> {
     /**

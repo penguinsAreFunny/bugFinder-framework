@@ -1,15 +1,15 @@
-import {Locality} from "../01-localities/locality";
 import {Quantifier} from "./quantifier";
 import {inject, injectable} from "inversify";
-import {BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES} from "./TYPES";
+import {QUANTIFIER_TYPES} from "./TYPES";
 import {DB} from "../../00-shared/db";
+import {Locality} from "../01-localities/01a-localities/locality";
 
 @injectable()
 export class QuantificationFactory<L extends Locality, Quantification> {
-    @inject(BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES.quantifier)
+    @inject(QUANTIFIER_TYPES.quantifier)
     quantifier: Quantifier<L, Quantification>;
 
-    @inject(BUGFINDER_FRAMEWORK_QUANTIFIER_TYPES.db)
+    @inject(QUANTIFIER_TYPES.db)
     db: DB<L, any, Quantification>;
 
     createQuantifier(): Quantifier<L, Quantification>{

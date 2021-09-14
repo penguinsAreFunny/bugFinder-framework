@@ -1,4 +1,4 @@
-import {Locality} from "../locality";
+import {Locality} from "./locality";
 
 export interface LocalityRecorder<L extends Locality> {
     /**

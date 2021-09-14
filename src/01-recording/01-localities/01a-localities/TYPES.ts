@@ -14,9 +14,9 @@
 import {Container} from "inversify";
 
 // @Formatter:off
-export const BUGFINDER_FRAMEWORK_LOCALITY_A_TYPES = {
+export const LOCALITY_A_TYPES = {
     localityRecorder:           Symbol("LocalityRecorder"),
     db:                         Symbol("DB")
 };
 
-export const container = new Container()
+export const localityAContainer = new Container()

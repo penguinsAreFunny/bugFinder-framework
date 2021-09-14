@@ -14,10 +14,10 @@
 import {Container} from "inversify";
 
 // @Formatter:off
-export const BUGFINDER_FRAMEWORK_LOCALITY_B_TYPES = {
+export const LOCALITY_B_TYPES = {
     localityPreprocessor:       Symbol("LocalityPreprocessor"),
     db:                         Symbol("DB"),
     db2:                        Symbol("DB2")
 }
 
-export const container = new Container()
+export const localityBContainer = new Container()

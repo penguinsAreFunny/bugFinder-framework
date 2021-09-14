@@ -1,5 +1,4 @@
-import { Locality } from "../01-localities/locality";
-import { LocalityMap } from "../01-localities";
+import { Locality, LocalityMap } from "../01-localities";
 export interface Quantifier<L extends Locality, Quantification> {
     /**
      * Quantifies 0-localities
