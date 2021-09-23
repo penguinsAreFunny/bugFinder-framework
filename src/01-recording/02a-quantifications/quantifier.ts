@@ -7,8 +7,4 @@ export interface Quantifier<L extends Locality, Quantification> {
      */
     quantify(localities: L[]): Promise<LocalityMap<L, Quantification>>;
 
-    /**
-     * TODO: DELETE ME | / refactor
-     */
-    applyPathHandling(localities: L[]): L[];
 }
