@@ -11,7 +11,6 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-import {Container} from "inversify";
 
 // @Formatter:off
 export const QUANTIFIER_TYPES = {
@@ -20,4 +19,3 @@ export const QUANTIFIER_TYPES = {
     quantificationFactory:  Symbol("QuantificationFactory")
 };
 
-export const quantifierContainer = new Container()

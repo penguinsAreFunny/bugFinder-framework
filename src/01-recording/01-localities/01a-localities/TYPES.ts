@@ -11,7 +11,6 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-import {Container} from "inversify";
 
 // @Formatter:off
 export const LOCALITY_A_TYPES = {
@@ -19,4 +18,3 @@ export const LOCALITY_A_TYPES = {
     db:                         Symbol("DB")
 };
 
-export const localityAContainer = new Container()
