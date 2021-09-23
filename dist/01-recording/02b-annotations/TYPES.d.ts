@@ -11,10 +11,8 @@
  * and instance to be injected (Symbol("Project")) at the beginning of DI.
  *
  */
-import { Container } from "inversify";
 export declare const ANNOTATOR_TYPES: {
     annotator: symbol;
     db: symbol;
     annotationFactory: symbol;
 };
-export declare const annotatorContainer: Container;

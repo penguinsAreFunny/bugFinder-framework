@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.annotatorContainer = exports.ANNOTATOR_TYPES = void 0;
+exports.ANNOTATOR_TYPES = void 0;
 /**
  * ANNOTATOR_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -14,12 +14,10 @@ exports.annotatorContainer = exports.ANNOTATOR_TYPES = void 0;
  * and instance to be injected (Symbol("Project")) at the beginning of DI.
  *
  */
-var inversify_1 = require("inversify");
 // @Formatter:off
 exports.ANNOTATOR_TYPES = {
     annotator: Symbol("Annotator"),
     db: Symbol("DB"),
     annotationFactory: Symbol("AnnotationFactory")
 };
-exports.annotatorContainer = new inversify_1.Container();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCx1Q0FBb0M7QUFFcEMsaUJBQWlCO0FBQ0osUUFBQSxlQUFlLEdBQUc7SUFDM0IsU0FBUyxFQUFXLE1BQU0sQ0FBQyxXQUFXLENBQUM7SUFDdkMsRUFBRSxFQUFrQixNQUFNLENBQUMsSUFBSSxDQUFDO0lBQ2hDLGlCQUFpQixFQUFHLE1BQU0sQ0FBQyxtQkFBbUIsQ0FBQztDQUNsRCxDQUFDO0FBRVcsUUFBQSxrQkFBa0IsR0FBRyxJQUFJLHFCQUFTLEVBQUUsQ0FBQSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAyYi1hbm5vdGF0aW9ucy9UWVBFUy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7Ozs7Ozs7Ozs7O0dBWUc7QUFDSCxpQkFBaUI7QUFDSixRQUFBLGVBQWUsR0FBRztJQUMzQixTQUFTLEVBQVcsTUFBTSxDQUFDLFdBQVcsQ0FBQztJQUN2QyxFQUFFLEVBQWtCLE1BQU0sQ0FBQyxJQUFJLENBQUM7SUFDaEMsaUJBQWlCLEVBQUcsTUFBTSxDQUFDLG1CQUFtQixDQUFDO0NBQ2xELENBQUMifQ==

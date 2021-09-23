@@ -11,9 +11,7 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-import { Container } from "inversify";
 export declare const LOCALITY_A_TYPES: {
     localityRecorder: symbol;
     db: symbol;
 };
-export declare const localityAContainer: Container;

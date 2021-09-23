@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.localityAContainer = exports.LOCALITY_A_TYPES = void 0;
 /**
  * LOCALITY_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -14,11 +12,11 @@ exports.localityAContainer = exports.LOCALITY_A_TYPES = void 0;
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-var inversify_1 = require("inversify");
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LOCALITY_A_TYPES = void 0;
 // @Formatter:off
 exports.LOCALITY_A_TYPES = {
     localityRecorder: Symbol("LocalityRecorder"),
     db: Symbol("DB")
 };
-exports.localityAContainer = new inversify_1.Container();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFhLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsdUNBQW9DO0FBRXBDLGlCQUFpQjtBQUNKLFFBQUEsZ0JBQWdCLEdBQUc7SUFDNUIsZ0JBQWdCLEVBQVksTUFBTSxDQUFDLGtCQUFrQixDQUFDO0lBQ3RELEVBQUUsRUFBMEIsTUFBTSxDQUFDLElBQUksQ0FBQztDQUMzQyxDQUFDO0FBRVcsUUFBQSxrQkFBa0IsR0FBRyxJQUFJLHFCQUFTLEVBQUUsQ0FBQSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFhLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7Ozs7Ozs7R0FZRzs7O0FBRUgsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixnQkFBZ0IsRUFBWSxNQUFNLENBQUMsa0JBQWtCLENBQUM7SUFDdEQsRUFBRSxFQUEwQixNQUFNLENBQUMsSUFBSSxDQUFDO0NBQzNDLENBQUMifQ==
