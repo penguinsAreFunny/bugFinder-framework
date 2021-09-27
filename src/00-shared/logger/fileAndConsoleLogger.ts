@@ -28,32 +28,37 @@ export class FileAndConsoleLogger implements Logger {
     }
 
     public trace(message?: any, ...optionalParams: any[]): void {
-        this.append("TRACE", `${message} ${JSON.stringify(optionalParams)}`,
+        this.append("TRACE", `${message} ${this.stringifyOptionalParams(optionalParams)}`,
             this.logConfig.traceToConsole, COLOR_RESET);
     }
 
     public debug(message?: any, ...optionalParams: any[]): void {
-        this.append("DEBUG", `${message} ${JSON.stringify(optionalParams)}`,
+        this.append("DEBUG", `${message} ${this.stringifyOptionalParams(optionalParams)}`,
             this.logConfig.debugToConsole, COLOR_RESET);
     }
 
     public info(message?: any, ...optionalParams: any[]): void {
-        this.append("INFO ", `${message} ${JSON.stringify(optionalParams)}`,
+        this.append("INFO ", `${message} ${this.stringifyOptionalParams(optionalParams)}`,
             this.logConfig.infoToConsole, COLOR_RESET);
     }
 
     public warn(message?: any, ...optionalParams: any[]): void {
-        this.append("WARN ", `${message} ${JSON.stringify(optionalParams)}`,
+        this.append("WARN ", `${message} ${this.stringifyOptionalParams(optionalParams)}`,
             this.logConfig.warnToConsole, COLOR_FG_YELLOW);
     }
 
     public error(message?: any, ...optionalParams: any[]): void {
-        this.append("ERROR", `${message} ${JSON.stringify(optionalParams)}`,
+        this.append("ERROR", `${message} ${this.stringifyOptionalParams(optionalParams)}`,
             this.logConfig.errorToConsole, COLOR_FG_RED);
     }
 
     private append(type: string, message: string, toConsole: boolean, color: string) {
         if (toConsole) console.log(`${color}${type} ${message}${COLOR_RESET}`)
         fs.writeSync(this.fd, `${new Date().toISOString()} ${type} ${message}\n`);
+    }
+    
+    private stringifyOptionalParams(...optionalParams: any[]){
+        const stringyfied = JSON.stringify(optionalParams)
+        return stringyfied == "[]"? "": stringyfied
     }
 }
