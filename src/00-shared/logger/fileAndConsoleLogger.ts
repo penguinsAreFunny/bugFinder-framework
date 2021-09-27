@@ -15,7 +15,7 @@ export class LogConfig {
 /**
  * FileLogger which optionally writes certain loglevel types to console.
  */
-class FileAndConsoleLogger implements Logger {
+export class FileAndConsoleLogger implements Logger {
 
     private readonly fd: number;
 

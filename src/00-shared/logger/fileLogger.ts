@@ -3,7 +3,7 @@ import * as fs from "fs";
 import {inject} from "inversify";
 import {SHARED_TYPES} from "../TYPES";
 
-class FileLogger implements Logger {
+export class FileLogger implements Logger {
     private readonly fd: number;
 
     public constructor(@inject(SHARED_TYPES.logFile) filename: string) {
