@@ -1,3 +1,4 @@
 export const SHARED_TYPES = {
-    logFile: Symbol("LogFile")
+    logFile: Symbol("LogFile"),
+    logger: Symbol("Logger")
 }
