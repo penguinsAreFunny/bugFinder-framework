@@ -1,6 +1,6 @@
 import {Logger} from "ts-log";
 import * as fs from "fs";
-import {inject} from "inversify";
+import {inject, injectable} from "inversify";
 import {SHARED_TYPES} from "../TYPES";
 
 export class LogConfig {
@@ -15,6 +15,7 @@ export class LogConfig {
 /**
  * FileLogger which optionally writes certain loglevel types to console.
  */
+@injectable()
 export class FileAndConsoleLogger implements Logger {
 
     private readonly fd: number;

@@ -1,8 +1,9 @@
 import {Logger} from "ts-log";
 import * as fs from "fs";
-import {inject} from "inversify";
+import {inject, injectable} from "inversify";
 import {SHARED_TYPES} from "../TYPES";
 
+@injectable()
 export class FileLogger implements Logger {
     private readonly fd: number;
 
