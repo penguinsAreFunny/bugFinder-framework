@@ -57,7 +57,7 @@ export class FileAndConsoleLogger implements Logger {
         fs.writeSync(this.fd, `${new Date().toISOString()} ${type} ${message}\n`);
     }
     
-    private stringifyOptionalParams(...optionalParams: any[]){
+    private stringifyOptionalParams(optionalParams: any[]){
         const stringyfied = JSON.stringify(optionalParams)
         return stringyfied == "[]"? "": stringyfied
     }
