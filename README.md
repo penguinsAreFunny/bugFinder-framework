@@ -24,6 +24,7 @@ you should be able to automatically analyse code and find localities with high b
 - [Component realisations available](#component-realisations-available)
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+<a name="introduction"></a>
 # Introduction
 The whole process beginning with recording until classification of localities is designed with a
 standard machine learning pipeline:
@@ -47,7 +48,7 @@ want to quantify, like .txt-, .md-files and only keep CommitPaths with paths in 
 3. After that you want to quantify your CommitPaths, f.e. with the SonarQubeQuantifier. Therefore getting 
 a map of CommitPaths to SonarQubeMeasurements.
 
-4. You might also want to annotate you localities so that you have labels needed 
+4. You might also want to annotate your localities so that you have labels needed 
 for suppervised learning algorithms. You can label your CommitPaths with analyzing the Commit-message
 for semantic key words like "bug, fix, error, fail" indicating a correction of a bug.
 
@@ -76,13 +77,176 @@ The best way to start is to clone the examples repository and make changes there
 
 
 ## 1. Recording
+For each step of the pipeline a process will be started.
+
+This framework uses [inversifyjs](https://github.com/inversify/InversifyJS) to inject dependencies.
+For each process you should have a configuration file and a main file.
+
+    npm i bugfinder-framework
+
 ### 1.1 Record localities
+with
 
+    $LOCALITY_CLASS: A class which implements the Locality interface.
+    $LOCALITY_RECORDER_CLASS: A class which implements the LocalityRecorder interface.
+        Generics: $LOCALITY_CLASS
+    $DB_CLASS: A class which implements the db interface.
+        Generics: $LOCALITY_CLASS, any, any
+inversify.config.ts:
+
+    import {LOCALITY_A_TYPES, DB, LocalityRecorder, LocalityRecordingFactory} 
+        from "bugfinder-framework";
+    import {localityAContainer} from "bugfinder-framework-defaultcontainer";
+    
+    const container = localityAContainer;
+    
+    // binding necessary types for locality recording process  
+    container.bind<LocalityRecorder< $LOCALITY_CLASS >>(LOCALITY_A_TYPES.localityRecorder)
+        .to( $LOCALITY_RECORDER_CLASS )
+    container.bind<DB< $LOCALITY_CLASS, any, any> >(LOCALITY_A_TYPES.db).to( $DBCLASS )
+    container.bind< LocalityRecordingFactory< $LOCALITY_CLASS >(
+        LOCALITY_A_TYPES.localityRecordingFactory).to(LocalityRecordingFactory)
+    
+    // [optional binding the packages you are using as localityRecorder and DB might need:]
+    // ...
+
+main.ts:
+
+    import "reflect-metadata";
+    import {container} from "./inversify.config"    
+    const factory = container.get<LocalityRecordingFactory< $LOCALITY_CLASS >(
+        LOCALITY_A_TYPES.localityRecordingFactory)
+
+    const db = factory.createDB()
+    const recorder = factory.createLocalityRecorder()
+    
+    const localities = await recorder.getLocalities()
+    await db.writeLocalities(localities, "Localities")
+        
 ### 1.2 Preprocess localities
+with
 
+    $LOCALITY_CLASS: A class which implements the Locality interface.
+    $LOCALITY_PREPROCESSOR_CLASS: A class which implements the LocalityPreprocessor interface.
+        Generics: $LOCALITY_CLASS
+    $DB_CLASS: A class which implements the db interface.
+        Generics: $LOCALITY_CLASS, any, any
+    
+inversify.config.ts:
+
+    import {LOCALITY_B_TYPES, DB, LocalityPreprocessor, LocalityPreprocessingFactory} 
+        from "bugfinder-framework";
+    import {localityBContainer} from "bugfinder-framework-defaultcontainer";
+    
+    const container = localityBContainer;
+    
+    // binding necessary types for locality preprocessing process  
+    container.bind<LocalityPreprocessor< $LOCALITY_CLASS >>(LOCALITY_B_TYPES.localityPreprocessor)
+        .to( $LOCALITY_PREPROCESSOR_CLASS )
+    container.bind<DB< $LOCALITY_CLASS, any, any> >(LOCALITY_B_TYPES.db).to( $DBCLASS )
+    container.bind< LocalityRecordingFactory< $LOCALITY_CLASS >(
+        LOCALITY_B_TYPES.localityPreprocessingFactory).to(LocalityRecordingFactory)
+    
+    // [optional binding the packages you are using as localityRecorder and DB might need:]
+    // ...
+
+main.ts:
+
+    import "reflect-metadata";
+    import {container} from "./inversify.config"    
+    const factory = container.get<LocalityPreprocessingFactory< $LOCALITY_CLASS >(
+        LOCALITY_B_TYPES.localityPreprocessingFactory)
+
+    const db = factory.createDB()
+    const preprocessor = factory.createLocalityPreprocessor()
+    
+    const localities = await db.readLocalities("Localities")
+    const processedLocalities = await preprocessor.preprocess(localities)
+    await db.writeLocalities(processedLocalities, "ProcessedLocalities")
+    
 ### 1.3 Quantify localities
+with
 
+    $LOCALITY_CLASS: A class which implements the Locality interface. 
+    $QUANTIFIER_CLASS: A class which implements the Quantifier interface.
+        Generics: $LOCALITY_CLASS, $QUANTIFICATION_CLASS
+    $DB_CLASS: A class which implements the db interface. 
+        Generics: $LOCALITY_CLASS, any, $MEASUREMENT_CLASS
+    $QUANTIFICATION_CLASS: A class. F.e. a class which contains der linesOfCode measured 
+        by your Quantifier
+    
+export interface Quantifier<L extends Locality, Quantification> 
+inversify.config.ts:
+
+    import {QUANTIFIER_TYPES, DB, Quantifier, QuantificationFactory} from "bugfinder-framework";
+    import {quantifierContainer} from "bugfinder-framework-defaultcontainer";
+    
+    const container = quantifierContainer;
+    
+    // binding necessary types for locality quantification process  
+    container.bind<Quantifier< $LOCALITY_CLASS >>(QUANTIFIER_TYPES.quantifier)
+        .to( $QUANTIFIER_CLASS )
+    container.bind<DB< $LOCALITY_CLASS, any, $QUANTIFICATION_CLASS > >(QUANTIFIER_TYPES.db)
+        .to( $DBCLASS )
+    container.bind< QuantificationFactory< $LOCALITY_CLASS >(
+        QUANTIFIER_TYPES.quantificationFactory).to(QuantificationFactory)
+    
+    // [optional binding the packages you are using as localityRecorder and DB might need:]
+    // ...
+
+main.ts:
+
+    import "reflect-metadata";
+    import {container} from "./inversify.config"    
+    const factory = container.get<QuantificationFactory< $LOCALITY_CLASS >(
+        QUANTIFIER_TYPES.quantificationFactory)
+
+    const db = factory.createDB()
+    const quantifier = factory.createQuantifier()
+    
+    const localities = await db.readLocalities("ProcessedLocalities")
+    const quantifications = await quantifier.quantify(localities)
+    await db.writeQuantifications(quantifications, "Quantifications")
 ### 1.4 Annotate localities
+with
+
+    $LOCALITY_CLASS: A class which implements the Locality interface. 
+    $ANNOTATOR_CLASS: A class which implements the Quantifier interface.
+        Generics: $LOCALITY_CLASS, $ANNOTATION_CLASS
+    $DB_CLASS: A class which implements the db interface. 
+        Generics: $LOCALITY_CLASS, $ANNOTAION_CLASS, any
+    $ANNOTATION_CLASS: A class. F.e. a class which contains a boolean bug which indicates
+        whethe the locality has a bug or not.
+inversify.config.ts:
+
+    import {ANNOTATION_TYPES, DB, Annotator, AnnotationFactory} from "bugfinder-framework";
+    import {annotatorContainer} from "bugfinder-framework-defaultcontainer";
+    
+    const container = annotatorContainer;
+    
+    // binding necessary types for locality quantification process  
+    container.bind<Annotator< $LOCALITY_CLASS >>(ANNOTATOR_TYPES.annotator)
+        .to( $ANNOTATOR_CLASS )
+    container.bind<DB< $LOCALITY_CLASS, $ANNOTATION_CLASS, any > >(ANNOTATOR_TYPES.db).to( $DBCLASS )
+    container.bind< AnnotationFactory< $LOCALITY_CLASS >(
+        ANNOTATOR_TYPES.annotationFactory).to(AnnotationFactory)
+    
+    // [optional binding the packages you are using as localityRecorder and DB might need:]
+    // ...
+
+main.ts:
+
+    import "reflect-metadata";
+    import {container} from "./inversify.config"    
+    const factory = container.get<AnnotationFactory< $LOCALITY_CLASS >(
+        ANNOTATOR_TYPES.annotationFactory)
+
+    const db = factory.createDB()
+    const annotator = factory.createAnnotator()
+    
+    const localities = await db.readLocalities("ProcessedLocalities")
+    const annotations = await annotator.annotate(localities)
+    await db.writeAnnotations(annotations, "Annotations")
 
 ## 2. Preprocessing
 
@@ -99,3 +263,12 @@ t.b.a.
 
 # Component realisations available
 You can find different components realisations open source on github and npm.
+## Recording
+### LocalityRecorder (and therefore localities)
+### LocalityPreprocessors
+### Quantifier
+### Annotator
+## Preprocessor
+## Feature Extractor
+## Trainer
+## Classifier
