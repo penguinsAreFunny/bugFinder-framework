@@ -11,8 +11,8 @@
  * and instance to be injected (Symbol.for("Project")) at the beginning of DI.
  *
  */
-export declare const LOCALITY_B_TYPES: {
+export declare const LOCALITY_PREPROCESSING_TYPES: {
     localityPreprocessor: symbol;
     db: symbol;
-    db2: symbol;
+    localityPreprocessingFactory: symbol;
 };

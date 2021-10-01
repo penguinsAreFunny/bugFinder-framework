@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LOCALITY_B_TYPES = void 0;
+exports.LOCALITY_PREPROCESSING_TYPES = void 0;
 /**
  * LOCALITY_TYPES: Dependency Injection
  * Used for solving potential circular dependencies
@@ -15,9 +15,9 @@ exports.LOCALITY_B_TYPES = void 0;
  *
  */
 // @Formatter:off
-exports.LOCALITY_B_TYPES = {
+exports.LOCALITY_PREPROCESSING_TYPES = {
     localityPreprocessor: Symbol("LocalityPreprocessor"),
     db: Symbol("DB"),
-    db2: Symbol("DB2")
+    localityPreprocessingFactory: Symbol("LocalityPreprocessingFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFiLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixvQkFBb0IsRUFBUSxNQUFNLENBQUMsc0JBQXNCLENBQUM7SUFDMUQsRUFBRSxFQUEwQixNQUFNLENBQUMsSUFBSSxDQUFDO0lBQ3hDLEdBQUcsRUFBeUIsTUFBTSxDQUFDLEtBQUssQ0FBQztDQUM1QyxDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFiLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7Ozs7Ozs7OztHQVlHO0FBQ0gsaUJBQWlCO0FBQ0osUUFBQSw0QkFBNEIsR0FBRztJQUN4QyxvQkFBb0IsRUFBWSxNQUFNLENBQUMsc0JBQXNCLENBQUM7SUFDOUQsRUFBRSxFQUE4QixNQUFNLENBQUMsSUFBSSxDQUFDO0lBQzVDLDRCQUE0QixFQUFJLE1BQU0sQ0FBQyw4QkFBOEIsQ0FBQztDQUN6RSxDQUFBIn0=

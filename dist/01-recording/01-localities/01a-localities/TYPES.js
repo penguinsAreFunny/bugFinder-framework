@@ -13,10 +13,11 @@
  *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LOCALITY_A_TYPES = void 0;
+exports.LOCALITY_RECORDING_TYPES = void 0;
 // @Formatter:off
-exports.LOCALITY_A_TYPES = {
+exports.LOCALITY_RECORDING_TYPES = {
     localityRecorder: Symbol("LocalityRecorder"),
-    db: Symbol("DB")
+    db: Symbol("DB"),
+    localityRecordingFactory: Symbol("LocalityRecordingFactory")
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFhLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7Ozs7Ozs7R0FZRzs7O0FBRUgsaUJBQWlCO0FBQ0osUUFBQSxnQkFBZ0IsR0FBRztJQUM1QixnQkFBZ0IsRUFBWSxNQUFNLENBQUMsa0JBQWtCLENBQUM7SUFDdEQsRUFBRSxFQUEwQixNQUFNLENBQUMsSUFBSSxDQUFDO0NBQzNDLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFlQRVMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvMDEtcmVjb3JkaW5nLzAxLWxvY2FsaXRpZXMvMDFhLWxvY2FsaXRpZXMvVFlQRVMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7Ozs7Ozs7R0FZRzs7O0FBRUgsaUJBQWlCO0FBQ0osUUFBQSx3QkFBd0IsR0FBRztJQUNwQyxnQkFBZ0IsRUFBWSxNQUFNLENBQUMsa0JBQWtCLENBQUM7SUFDdEQsRUFBRSxFQUEwQixNQUFNLENBQUMsSUFBSSxDQUFDO0lBQ3hDLHdCQUF3QixFQUFJLE1BQU0sQ0FBQywwQkFBMEIsQ0FBQztDQUNqRSxDQUFDIn0=
