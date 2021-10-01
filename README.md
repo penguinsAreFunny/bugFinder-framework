@@ -14,14 +14,32 @@ you should be able to automatically analyse code and find localities with high b
 
 # Table of Contents  
 - [BugFinder-Framework](#bugfinder-framework)
+- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
   * [Recording by example - intuition](#recording-by-example---intuition)
   * [Preprocessing by example - intuition](#preprocessing-by-example---intuition)
   * [Feature extraction - intuition](#feature-extraction---intuition)
   * [Training - intuition](#training---intuition)
 - [Quick start](#quick-start)
+  * [1. Recording](#1-recording)
+    + [1.1 Record localities](#11-record-localities)
+    + [1.2 Preprocess localities](#12-preprocess-localities)
+    + [1.3 Quantify localities](#13-quantify-localities)
+    + [1.4 Annotate localities](#14-annotate-localities)
+  * [2. Preprocessing](#2-preprocessing)
+  * [3. Feature Extraction](#3-feature-extraction)
+  * [4. Training](#4-training)
 - [Usage: Researcher](#usage--researcher)
 - [Component realisations available](#component-realisations-available)
+  * [Recording](#recording)
+    + [LocalityRecorder (and therefore localities)](#localityrecorder--and-therefore-localities-)
+    + [LocalityPreprocessors](#localitypreprocessors)
+    + [Quantifier](#quantifier)
+    + [Annotator](#annotator)
+  * [Preprocessor](#preprocessor)
+  * [Feature Extractor](#feature-extractor)
+  * [Trainer](#trainer)
+  * [Classifier](#classifier)
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 <a name="introduction"></a>
@@ -263,11 +281,27 @@ t.b.a.
 
 # Component realisations available
 You can find different components realisations open source on github and npm.
+Search for bugfinder-*
+## Shared
+### DB
+- [Commit-MongoDB](https://www.npmjs.com/package/bugfinder-commit-db-mongodb)
+- [CommitPath-MongoDB](https://www.npmjs.com/package/bugfinder-commitpath-db-mongodb)
 ## Recording
 ### LocalityRecorder (and therefore localities)
+npm search: bugfinder-localityrecorder-*
+- [CommitPath](https://www.npmjs.com/package/bugfinder-localityrecorder-commitpath)
+- [Commit](https://www.npmjs.com/package/bugfinder-localityrecorder-commit)
+
 ### LocalityPreprocessors
+npm search: bugfinder-$LOCALITY_CLASS-localityPreprocessor-* 
+- [CommitSubset](https://www.npmjs.com/package/bugfinder-commitpath-localitypreprocessor-commitsubset)
 ### Quantifier
+npm search: bugfinder-$LOCALITY_CLASS-quantifier-*
+- [SonarQube](https://github.com/penguinsAreFunny/bugFinder-commitPath-quantifier-sonarqube)
 ### Annotator
+npm search: bugfinder-$LOCALITY_CLASS-annotator-*
+- [Commit-Msg](https://www.npmjs.com/package/bugfinder-commitpath-annotator-commitmsg)
+
 ## Preprocessor
 ## Feature Extractor
 ## Trainer
