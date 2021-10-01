@@ -12,9 +12,9 @@
  *
  */
 // @Formatter:off
-export const LOCALITY_B_TYPES = {
-    localityPreprocessor:       Symbol("LocalityPreprocessor"),
-    db:                         Symbol("DB"),
-    db2:                        Symbol("DB2")
+export const LOCALITY_PREPROCESSING_TYPES = {
+    localityPreprocessor:           Symbol("LocalityPreprocessor"),
+    db:                             Symbol("DB"),
+    localityPreprocessingFactory:   Symbol("LocalityPreprocessingFactory")
 }
 

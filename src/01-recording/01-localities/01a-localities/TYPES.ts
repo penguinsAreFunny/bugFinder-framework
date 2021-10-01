@@ -13,8 +13,9 @@
  */
 
 // @Formatter:off
-export const LOCALITY_A_TYPES = {
+export const LOCALITY_RECORDING_TYPES = {
     localityRecorder:           Symbol("LocalityRecorder"),
-    db:                         Symbol("DB")
+    db:                         Symbol("DB"),
+    localityRecordingFactory:   Symbol("LocalityRecordingFactory")
 };
 
