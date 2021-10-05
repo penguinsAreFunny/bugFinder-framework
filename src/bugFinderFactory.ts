@@ -1,7 +1,7 @@
 import {Locality, LocalityRecorder} from "./01-recording/01-localities/01a-localities";
 import {Quantifier} from "./01-recording/02a-quantifications";
 import {LocalityPreprocessor} from "./01-recording/01-localities/01b-localities";
-import {Preprocessor} from "./02-preprocessing/preprocessor";
+import {Preprocessor} from "./02-preprocessing/preprocessing";
 
 export class BugFinderFactory<L extends Locality, Quantification> {
     createLocalityRecorder(): LocalityRecorder<L> {
