@@ -1,4 +1,5 @@
 export const PREPROCESSING_TYPES = {
-    preprocessor:   Symbol.for("Preprocessor"),
+    preprocessor:   Symbol("Preprocessor"),
+    db:             Symbol("DB")
 }
 

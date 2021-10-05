@@ -3,6 +3,7 @@
  */
 import {Locality} from "../../01-recording/01-localities/01a-localities/locality";
 import {LocalityMap} from "../../01-recording/01-localities/01a-localities/locality";
+import {Dataset} from "../../02-preprocessing/preprocessing";
 
 export interface DB<L extends Locality, Annotation, Quantification> {
     /**
@@ -50,4 +51,16 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      */
     writeQuantifications(quantifications: LocalityMap<L, Quantification>, toID: string): Promise<void>;
 
+    /**
+     * Reads a dataset from DB
+     * @param fromID
+     */
+    readDataset(fromID: string): Promise<Dataset>;
+
+    /**
+     * Writes a Dataset to DB
+     * @param toID
+     * @param dataset
+     */
+    writeDataset(toID: string, dataset: Dataset): Promise<void>;
 }

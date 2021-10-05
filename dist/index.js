@@ -16,6 +16,6 @@ __exportStar(require("./01-recording"), exports);
 export * from "./02-preprocessing"
 export * from "./03-feature-extraction"
 export * from "./04a-training"
-export * from "./04b-classification"
+export * from "./04b-prediction"
  */
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsOENBQTJCO0FBQzNCLGlEQUE4QjtBQUM5Qjs7Ozs7R0FLRyJ9

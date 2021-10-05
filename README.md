@@ -193,7 +193,6 @@ with
     $QUANTIFICATION_CLASS: A class. F.e. a class which contains der linesOfCode measured 
         by your Quantifier
     
-export interface Quantifier<L extends Locality, Quantification> 
 inversify.config.ts:
 
     import {QUANTIFIER_TYPES, DB, Quantifier, QuantificationFactory} from "bugfinder-framework";
