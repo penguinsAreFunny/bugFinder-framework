@@ -12,10 +12,13 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./00-shared"), exports);
 __exportStar(require("./01-recording"), exports);
+__exportStar(require("./02-preprocessing"), exports);
+__exportStar(require("./03-feature-extraction"), exports);
+__exportStar(require("./04b-prediction"), exports);
 /*
 export * from "./02-preprocessing"
 export * from "./03-feature-extraction"
 export * from "./04a-training"
 export * from "./04b-prediction"
  */
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsOENBQTJCO0FBQzNCLGlEQUE4QjtBQUM5Qjs7Ozs7R0FLRyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsOENBQTJCO0FBQzNCLGlEQUE4QjtBQUM5QixxREFBa0M7QUFDbEMsMERBQXVDO0FBQ3ZDLG1EQUFnQztBQUNoQzs7Ozs7R0FLRyJ9
