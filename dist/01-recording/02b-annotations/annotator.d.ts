@@ -1,9 +1,9 @@
 import { Locality, LocalityMap } from "../01-localities";
 export interface Annotator<L extends Locality, Annotation> {
     /**
-     * Annotates all localities with a number
-     * Annotations may be calculated with more than just 1 locality
-     * @param localities
+     * Annotates all localities
+     * @param localitiesToAnnotate localities to annotate. Only these localities will be set in return value.
+     * @param allLocalities all localities to take into consideration during annotation.
      */
-    annotate(localities: L[]): LocalityMap<L, Annotation>;
+    annotate(localitiesToAnnotate: L[], allLocalities?: L[]): LocalityMap<L, Annotation>;
 }
