@@ -22,7 +22,7 @@ you should be able to automatically analyse code and find localities with high b
   * [Training - intuition](#training---intuition)
 - [Quick start](#quick-start)
   * [1. Recording](#1-recording)
-    + [1.1 Record localities](#11-record-localities)sc
+    + [1.1 Record localities](#11-record-localities)
     + [1.2 Preprocess localities](#12-preprocess-localities)
     + [1.3 Quantify localities](#13-quantify-localities)
     + [1.4 Annotate localities](#14-annotate-localities)
@@ -191,7 +191,7 @@ with
         Generics: $LOCALITY_CLASS, $QUANTIFICATION_CLASS
     $DB_CLASS: A class which implements the db interface. 
         Generics: $LOCALITY_CLASS, any, $MEASUREMENT_CLASS
-    $QUANTIFICATION_CLASS: A class. F.e. a class which contains der linesOfCode measured 
+    $QUANTIFICATION_CLASS: A class. F.e. a class which contains the linesOfCode measured 
         by your Quantifier
     
 inversify.config.ts:
