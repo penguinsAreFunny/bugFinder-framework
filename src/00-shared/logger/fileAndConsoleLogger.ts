@@ -58,7 +58,7 @@ export class FileAndConsoleLogger implements Logger {
     }
     
     private stringifyOptionalParams(optionalParams: any[]){
-        const stringyfied = JSON.stringify(optionalParams)
-        return stringyfied == "[]"? "": stringyfied
+        const stringyfied = JSON.stringify(optionalParams, null, 4)
+        return stringyfied == "[]"? "\n\t": stringyfied
     }
 }
