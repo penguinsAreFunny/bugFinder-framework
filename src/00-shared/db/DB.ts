@@ -5,6 +5,14 @@ import {Locality, LocalityMap} from "../../01-recording/01-localities/01a-locali
 import {DatasetAP} from "../../02-preprocessing/preprocessing";
 import {DatasetAFE} from "../../03-feature-extraction/featureExtractor";
 
+export enum WriteMode {
+    // write only if db is empty
+    write,
+    // append db
+    append
+}
+
+
 export interface DB<L extends Locality, Annotation, Quantification> {
     /**
      * Reads an array of Localities from DB
@@ -18,8 +26,9 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes an array of 0-localities to DB
      * @param localities
      * @param toID collection-/table-name to which should be written
+     * @param mode
      */
-    writeLocalities(localities: L[], toID: string): Promise<void>;
+    writeLocalities(localities: L[], toID: string, mode?: WriteMode): Promise<void>;
 
     /**
      * Read a map of <Locality.key, Annotations> from DB
@@ -33,8 +42,9 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a map of <Locality.key, Annotations> to DB
      * @param annotations
      * @param toID
+     * @param mode
      */
-    writeAnnotations(annotations: LocalityMap<L, Annotation>, toID: string): Promise<void>;
+    writeAnnotations(annotations: LocalityMap<L, Annotation>, toID: string, mode?: WriteMode): Promise<void>;
 
     /**
      * Reads a map of <Locality.key, Quantifications> from DB
@@ -48,8 +58,9 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a map of <Locality.key, Quantifications> to DB
      * @param quantifications
      * @param toID
+     * @param mode
      */
-    writeQuantifications(quantifications: LocalityMap<L, Quantification>, toID: string): Promise<void>;
+    writeQuantifications(quantifications: LocalityMap<L, Quantification>, toID: string, mode?: WriteMode): Promise<void>;
 
     /**
      * Reads a DatasetAP from DB
@@ -61,8 +72,9 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a DatasetAP to DB
      * @param toID
      * @param dataset
+     * @param mode
      */
-    writeDatasetAP(toID: string, dataset: DatasetAP): Promise<void>;
+    writeDatasetAP(toID: string, dataset: DatasetAP, mode?: WriteMode): Promise<void>;
 
     /**
      * Reads a DatasetAFE from DB
@@ -74,6 +86,7 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a DatasetAFE to DB
      * @param toID
      * @param dataset
+     * @param mode
      */
-    writeDatasetAFE(toID: string, dataset: DatasetAFE): Promise<void>;
+    writeDatasetAFE(toID: string, dataset: DatasetAFE, mode?: WriteMode): Promise<void>;
 }
