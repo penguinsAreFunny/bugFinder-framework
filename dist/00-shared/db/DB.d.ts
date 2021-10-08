@@ -2,7 +2,8 @@
  * Interface for writing and reading 0-localities from and to database
  */
 import { Locality, LocalityMap } from "../../01-recording/01-localities/01a-localities/locality";
-import { Dataset } from "../../02-preprocessing/preprocessing";
+import { DatasetAP } from "../../02-preprocessing/preprocessing";
+import { DatasetAFE } from "../../03-feature-extraction/featureExtractor";
 export interface DB<L extends Locality, Annotation, Quantification> {
     /**
      * Reads an array of Localities from DB
@@ -44,14 +45,25 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      */
     writeQuantifications(quantifications: LocalityMap<L, Quantification>, toID: string): Promise<void>;
     /**
-     * Reads a dataset from DB
+     * Reads a DatasetAP from DB
      * @param fromID
      */
-    readDataset(fromID: string): Promise<Dataset>;
+    readDatasetAP(fromID: string): Promise<DatasetAP>;
     /**
-     * Writes a Dataset to DB
+     * Writes a DatasetAP to DB
      * @param toID
      * @param dataset
      */
-    writeDataset(toID: string, dataset: Dataset): Promise<void>;
+    writeDatasetAP(toID: string, dataset: DatasetAP): Promise<void>;
+    /**
+     * Reads a DatasetAFE from DB
+     * @param fromID
+     */
+    readDatasetAFE(fromID: string): Promise<DatasetAFE>;
+    /**
+     * Writes a DatasetAFE to DB
+     * @param toID
+     * @param dataset
+     */
+    writeDatasetAFE(toID: string, dataset: DatasetAFE): Promise<void>;
 }
