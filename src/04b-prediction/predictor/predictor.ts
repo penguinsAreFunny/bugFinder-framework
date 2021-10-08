@@ -1,4 +1,4 @@
-export interface predictor {
+export interface Predictor {
 
     /**
      * Predicts the targets of an array of features.
