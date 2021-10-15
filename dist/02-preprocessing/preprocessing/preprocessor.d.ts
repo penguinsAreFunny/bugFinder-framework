@@ -1,6 +1,6 @@
 import { Locality, LocalityMap } from "bugfinder-framework";
 import { DatasetAP } from "./datasetAP";
-export interface Preprocessor<L extends Locality, Quantification, Annotation> {
+export interface Preprocessor<L extends Locality, Annotation, Quantification> {
     /**
      * Preprocesses the quantifications and annotations.
      * @param quantifications
