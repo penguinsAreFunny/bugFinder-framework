@@ -35,6 +35,7 @@ exports.FileAndConsoleLogger = exports.LogConfig = void 0;
 var fs = __importStar(require("fs"));
 var inversify_1 = require("inversify");
 var TYPES_1 = require("../TYPES");
+var util = __importStar(require("util"));
 var LogConfig = /** @class */ (function () {
     function LogConfig() {
         this.traceToConsole = true;
@@ -62,44 +63,93 @@ var FileAndConsoleLogger = /** @class */ (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             optionalParams[_i - 1] = arguments[_i];
         }
-        this.append("TRACE", message + " " + this.stringifyOptionalParams(optionalParams), this.logConfig.traceToConsole, COLOR_RESET);
+        this.append("TRACE", this.logConfig.traceToConsole, message, COLOR_RESET, optionalParams);
     };
     FileAndConsoleLogger.prototype.debug = function (message) {
         var optionalParams = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             optionalParams[_i - 1] = arguments[_i];
         }
-        this.append("DEBUG", message + " " + this.stringifyOptionalParams(optionalParams), this.logConfig.debugToConsole, COLOR_RESET);
+        this.append("DEBUG", this.logConfig.debugToConsole, message, COLOR_RESET, optionalParams);
     };
     FileAndConsoleLogger.prototype.info = function (message) {
         var optionalParams = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             optionalParams[_i - 1] = arguments[_i];
         }
-        this.append("INFO ", message + " " + this.stringifyOptionalParams(optionalParams), this.logConfig.infoToConsole, COLOR_RESET);
+        this.append("INFO", this.logConfig.infoToConsole, message, COLOR_RESET, optionalParams);
     };
     FileAndConsoleLogger.prototype.warn = function (message) {
         var optionalParams = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             optionalParams[_i - 1] = arguments[_i];
         }
-        this.append("WARN ", message + " " + this.stringifyOptionalParams(optionalParams), this.logConfig.warnToConsole, COLOR_FG_YELLOW);
+        this.append("WARN", this.logConfig.errorToConsole, message, COLOR_FG_YELLOW, optionalParams);
     };
     FileAndConsoleLogger.prototype.error = function (message) {
         var optionalParams = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             optionalParams[_i - 1] = arguments[_i];
         }
-        this.append("ERROR", message + " " + this.stringifyOptionalParams(optionalParams), this.logConfig.errorToConsole, COLOR_FG_RED);
+        this.append("ERROR", this.logConfig.errorToConsole, message, COLOR_FG_RED, optionalParams);
     };
-    FileAndConsoleLogger.prototype.append = function (type, message, toConsole, color) {
-        if (toConsole)
-            console.log("" + color + type + " " + message + COLOR_RESET);
-        fs.writeSync(this.fd, new Date().toISOString() + " " + type + " " + message + "\n");
+    FileAndConsoleLogger.prototype.append = function (type, typeToConsole, message, color) {
+        var optionalParams = [];
+        for (var _i = 4; _i < arguments.length; _i++) {
+            optionalParams[_i - 4] = arguments[_i];
+        }
+        if (typeToConsole) {
+            this.toConsole(type, "" + message, color, optionalParams);
+        }
+        this.toFile(type, message + " \n" + this.fileStringyfied(optionalParams));
     };
-    FileAndConsoleLogger.prototype.stringifyOptionalParams = function (optionalParams) {
-        var stringyfied = JSON.stringify(optionalParams, null, 4);
-        return stringyfied == "[]" ? "\n\t" : stringyfied;
+    FileAndConsoleLogger.prototype.toConsole = function (type, message, color) {
+        var optionalParams = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+            optionalParams[_i - 3] = arguments[_i];
+        }
+        var transformedOptionalParams = this.consoleStringyfied(optionalParams);
+        var msg = transformedOptionalParams == "" ?
+            "" + color + type + "\t" + message + COLOR_RESET
+            : "" + color + type + "\t" + message + "\n" + transformedOptionalParams + COLOR_RESET;
+        console.log(msg);
+    };
+    FileAndConsoleLogger.prototype.toFile = function (type, message) {
+        var optionalParams = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            optionalParams[_i - 2] = arguments[_i];
+        }
+        var transformedOptionalParams = this.fileStringyfied(optionalParams);
+        var msg = transformedOptionalParams == "" ?
+            new Date().toISOString() + " " + type + "\t" + message
+            : new Date().toISOString() + " " + type + "\t" + message + "\n" + transformedOptionalParams;
+        fs.writeSync(this.fd, msg);
+    };
+    FileAndConsoleLogger.prototype.consoleStringyfied = function () {
+        var optionalParams = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            optionalParams[_i] = arguments[_i];
+        }
+        if (optionalParams == null || optionalParams.length == 0) {
+            return "";
+        }
+        // stringified params with coloring
+        var stringyfiedParams = util.inspect(optionalParams, { colors: true, depth: null });
+        // print JSON one tab to the right
+        return stringyfiedParams.split("\n").map(function (line) { return "\t" + line; }).join("");
+    };
+    FileAndConsoleLogger.prototype.fileStringyfied = function () {
+        var optionalParams = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            optionalParams[_i] = arguments[_i];
+        }
+        if (optionalParams == null || optionalParams.length == 0) {
+            return "";
+        }
+        // stringified params
+        var stringyfiedParams = JSON.stringify(optionalParams, null, 4);
+        // print JSON one tab to the right
+        return stringyfiedParams.split("\n").map(function (line) { return "\t" + line; }).join("");
     };
     FileAndConsoleLogger = __decorate([
         (0, inversify_1.injectable)(),
@@ -109,4 +159,4 @@ var FileAndConsoleLogger = /** @class */ (function () {
     return FileAndConsoleLogger;
 }());
 exports.FileAndConsoleLogger = FileAndConsoleLogger;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsZUFuZENvbnNvbGVMb2dnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDAtc2hhcmVkL2xvZ2dlci9maWxlQW5kQ29uc29sZUxvZ2dlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0EscUNBQXlCO0FBQ3pCLHVDQUE2QztBQUM3QyxrQ0FBc0M7QUFFdEM7SUFBQTtRQUNJLG1CQUFjLEdBQVksSUFBSSxDQUFBO1FBQzlCLG1CQUFjLEdBQVksSUFBSSxDQUFBO1FBQzlCLGtCQUFhLEdBQVksSUFBSSxDQUFBO1FBQzdCLGtCQUFhLEdBQVksSUFBSSxDQUFBO1FBQzdCLG1CQUFjLEdBQVksSUFBSSxDQUFBO0lBRWxDLENBQUM7SUFBRCxnQkFBQztBQUFELENBQUMsQUFQRCxJQU9DO0FBUFksOEJBQVM7QUFTdEIsSUFBTSxXQUFXLEdBQUcsU0FBUyxDQUFBO0FBQzdCLElBQU0sWUFBWSxHQUFHLFVBQVUsQ0FBQTtBQUMvQixJQUFNLGVBQWUsR0FBRyxVQUFVLENBQUE7QUFFbEM7O0dBRUc7QUFFSDtJQUdJLDhCQUEwRCxTQUFvQjtRQUFwQixjQUFTLEdBQVQsU0FBUyxDQUFXO1FBQzFFLElBQUksQ0FBQyxFQUFFLEdBQUcsRUFBRSxDQUFDLFFBQVEsQ0FBQyxTQUFTLENBQUMsT0FBTyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xELENBQUM7SUFFTSxvQ0FBSyxHQUFaLFVBQWEsT0FBYTtRQUFFLHdCQUF3QjthQUF4QixVQUF3QixFQUF4QixxQkFBd0IsRUFBeEIsSUFBd0I7WUFBeEIsdUNBQXdCOztRQUNoRCxJQUFJLENBQUMsTUFBTSxDQUFDLE9BQU8sRUFBSyxPQUFPLFNBQUksSUFBSSxDQUFDLHVCQUF1QixDQUFDLGNBQWMsQ0FBRyxFQUM3RSxJQUFJLENBQUMsU0FBUyxDQUFDLGNBQWMsRUFBRSxXQUFXLENBQUMsQ0FBQztJQUNwRCxDQUFDO0lB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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsZUFuZENvbnNvbGVMb2dnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvMDAtc2hhcmVkL2xvZ2dlci9maWxlQW5kQ29uc29sZUxvZ2dlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0EscUNBQXlCO0FBQ3pCLHVDQUE2QztBQUM3QyxrQ0FBc0M7QUFDdEMseUNBQTRCO0FBRTVCO0lBQUE7UUFDSSxtQkFBYyxHQUFZLElBQUksQ0FBQTtRQUM5QixtQkFBYyxHQUFZLElBQUksQ0FBQTtRQUM5QixrQkFBYSxHQUFZLElBQUksQ0FBQTtRQUM3QixrQkFBYSxHQUFZLElBQUksQ0FBQTtRQUM3QixtQkFBYyxHQUFZLElBQUksQ0FBQTtJQUVsQyxDQUFDO0lBQUQsZ0JBQUM7QUFBRCxDQUFDLEFBUEQsSUFPQztBQVBZLDhCQUFTO0FBU3RCLElBQU0sV0FBVyxHQUFHLFNBQVMsQ0FBQTtBQUM3QixJQUFNLFlBQVksR0FBRyxVQUFVLENBQUE7QUFDL0IsSUFBTSxlQUFlLEdBQUcsVUFBVSxDQUFBO0FBRWxDOztHQUVHO0FBRUg7SUFHSSw4QkFBMEQsU0FBb0I7UUFBcEIsY0FBUyxHQUFULFNBQVMsQ0FBVztRQUMxRSxJQUFJLENBQUMsRUFBRSxHQUFHLEVBQUUsQ0FBQyxRQUFRLENBQUMsU0FBUyxDQUFDLE9BQU8sRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsRCxDQUFDO0lBRU0sb0NBQUssR0FBWixVQUFhLE9BQWE7UUFBRSx3QkFBd0I7YUFBeEIsVUFBd0IsRUFBeEIscUJBQXdCLEVBQXhCLElBQXdCO1lBQXhCLHVDQUF3Qjs7UUFDaEQsSUFBSSxDQUFDLE1BQU0sQ0FBQyxPQUFPLEVBQUUsSUFBSSxDQUFDLFNBQVMsQ0FBQyxjQUFjLEVBQUUsT0FBTyxFQUFFLFdBQVcsRUFBRSxjQUFjLENBQUMsQ0FBQTtJQUM3RixDQUFDO0lBRU0sb0NBQUssR0FBWixV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

@@ -20,5 +20,8 @@ export declare class FileAndConsoleLogger implements Logger {
     warn(message?: any, ...optionalParams: any[]): void;
     error(message?: any, ...optionalParams: any[]): void;
     private append;
-    private stringifyOptionalParams;
+    private toConsole;
+    private toFile;
+    private consoleStringyfied;
+    private fileStringyfied;
 }
