@@ -1,6 +1,6 @@
 {
   "name": "bugfinder-framework",
-  "version": "9.8.1",
+  "version": "9.8.2",
   "description": "Framework used to research bug correlations to quantifications of software artefacts and automatically find bugs with machine learning methods",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
