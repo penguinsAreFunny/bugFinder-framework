@@ -72,9 +72,8 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a DatasetAP to DB
      * @param toID
      * @param dataset
-     * @param mode
      */
-    writeDatasetAP(toID: string, dataset: DatasetAP, mode?: WriteMode): Promise<void>;
+    writeDatasetAP(toID: string, dataset: DatasetAP): Promise<void>;
 
     /**
      * Reads a DatasetAFE from DB
@@ -86,7 +85,6 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Writes a DatasetAFE to DB
      * @param toID
      * @param dataset
-     * @param mode
      */
-    writeDatasetAFE(toID: string, dataset: DatasetAFE, mode?: WriteMode): Promise<void>;
+    writeDatasetAFE(toID: string, dataset: DatasetAFE): Promise<void>;
 }
