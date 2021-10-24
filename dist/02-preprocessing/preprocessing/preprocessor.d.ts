@@ -5,7 +5,6 @@ export interface Preprocessor<L extends Locality, Annotation, Quantification> {
      * Preprocesses the quantifications and annotations.
      * @param quantifications
      * @param annotations
-     * @param orderedLocalities
      */
-    preprocess(quantifications: LocalityMap<L, Quantification>, annotations: LocalityMap<L, Annotation>, orderedLocalities: L[]): Promise<DatasetAP>;
+    preprocess(quantifications: LocalityMap<L, Quantification>, annotations: LocalityMap<L, Annotation>): Promise<DatasetAP>;
 }
