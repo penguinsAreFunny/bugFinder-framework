@@ -295,7 +295,7 @@ npm search: bugfinder-localityrecorder-*
 
 ### LocalityPreprocessors
 npm search: bugfinder-$LOCALITY_CLASS-localityPreprocessor-* 
-- [CommitSubset](https://www.npmjs.com/package/bugfinder-commitpath-localitypreprocessor-commitsubset)
+- [Predecessors](https://www.npmjs.com/package/bugfinder-commitpath-localitypreprocessor-commitsubset)
 ### Quantifier
 npm search: bugfinder-$LOCALITY_CLASS-quantifier-*
 - [SonarQube](https://github.com/penguinsAreFunny/bugFinder-commitPath-quantifier-sonarqube)
