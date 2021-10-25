@@ -23,8 +23,12 @@ export class LocalityMap<L extends Locality, V> {
     }
 
     set(locality: L, value: V) {
-        this._valMap.set(locality.key(), value);
-        this._locMap.set(locality.key(), locality);
+        const key = locality.key()
+        if(this._valMap.get(key) != null)
+            return
+
+        this._valMap.set(key, value);
+        this._locMap.set(key, locality);
         this._localities.push(locality);
     }
 
