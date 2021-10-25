@@ -6,9 +6,10 @@ import { TraceAFE } from "./traceAFE";
 export declare class DatasetAFE {
     data: Array<number[]>;
     target: Array<number[]>;
+    keys: string[];
     featureNames: string[];
     targetNames: string[];
     description: string;
     traceAP: TraceAFE;
-    constructor(data: Array<number[]>, target: Array<number[]>, featureNames: string[], targetNames: string[], description: string, traceAP: TraceAFE);
+    constructor(data: Array<number[]>, target: Array<number[]>, keys: string[], featureNames: string[], targetNames: string[], description: string, traceAP: TraceAFE);
 }

@@ -7,9 +7,10 @@ import { TraceAP } from "./traceAP";
 export declare class DatasetAP implements Dataset {
     data: Array<number[]>;
     target: Array<number[]>;
+    keys: string[];
     featureNames: string[];
     targetNames: string[];
     description: string;
     traceAP: TraceAP;
-    constructor(data: Array<number[]>, target: Array<number[]>, featureNames: string[], targetNames: string[], description: string, traceAP: TraceAP);
+    constructor(data: Array<number[]>, target: Array<number[]>, keys: string[], featureNames: string[], targetNames: string[], description: string, traceAP: TraceAP);
 }
