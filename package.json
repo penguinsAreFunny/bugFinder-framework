@@ -38,10 +38,7 @@
   },
   "dependencies": {
     "@types/node": "^15.12.2",
-    "bugfinder-framework-defaultcontainer": "^1.2.0",
+    "bugfinder-framework-defaultcontainer": "^1.3.0",
     "ts-log": "^2.2.3"
-  },
-  "peerDependencies": {
-    "bugfinder-framework-defaultcontainer": "1.2.0"
   }
 }
