@@ -9,6 +9,7 @@ export class DatasetAP implements Dataset {
 
     constructor(public data: Array<number[]>,
                 public target: Array<number[]>,
+                public keys: string[],
                 public featureNames: string[],
                 public targetNames: string[],
                 public description: string,

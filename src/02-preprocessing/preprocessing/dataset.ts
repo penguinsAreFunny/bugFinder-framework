@@ -13,8 +13,15 @@ export interface Dataset {
      * Targets (classes/labels) used in machine learning
      */
     target: Array<number[]>,
+
+    /**
+     * Keys of the localities
+     */
+    keys: string[]
+
     featureNames: string[],
     targetNames: string[],
     description: string
+
 }
 
