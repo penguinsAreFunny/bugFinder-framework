@@ -18,7 +18,7 @@ export class DatasetAFE {
                 public featureNames: string[],
                 public targetNames: string[],
                 public description: string,
-                public traceAP: TraceAFE
+                public traceAFE: TraceAFE
     ) {
 
     }
