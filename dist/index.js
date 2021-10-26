@@ -14,5 +14,6 @@ __exportStar(require("./00-shared"), exports);
 __exportStar(require("./01-recording"), exports);
 __exportStar(require("./02-preprocessing"), exports);
 __exportStar(require("./03-feature-extraction"), exports);
+__exportStar(require("./04a-training"), exports);
 __exportStar(require("./04b-prediction"), exports);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsOENBQTJCO0FBQzNCLGlEQUE4QjtBQUM5QixxREFBa0M7QUFDbEMsMERBQXVDO0FBQ3ZDLG1EQUFnQyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsOENBQTJCO0FBQzNCLGlEQUE4QjtBQUM5QixxREFBa0M7QUFDbEMsMERBQXVDO0FBQ3ZDLGlEQUE4QjtBQUM5QixtREFBZ0MifQ==
