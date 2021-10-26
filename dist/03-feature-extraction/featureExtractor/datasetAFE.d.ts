@@ -10,6 +10,6 @@ export declare class DatasetAFE {
     featureNames: string[];
     targetNames: string[];
     description: string;
-    traceAP: TraceAFE;
-    constructor(data: Array<number[]>, target: Array<number[]>, keys: string[], featureNames: string[], targetNames: string[], description: string, traceAP: TraceAFE);
+    traceAFE: TraceAFE;
+    constructor(data: Array<number[]>, target: Array<number[]>, keys: string[], featureNames: string[], targetNames: string[], description: string, traceAFE: TraceAFE);
 }
