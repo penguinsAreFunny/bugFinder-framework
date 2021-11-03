@@ -2,8 +2,7 @@
  * Interface for writing and reading 0-localities from and to database
  */
 import { Locality, LocalityMap } from "../../01-recording/01-localities/01a-localities/locality";
-import { DatasetAP } from "../../02-preprocessing/preprocessing";
-import { DatasetAFE } from "../../03-feature-extraction/featureExtractor";
+import { Dataset } from "../../02-preprocessing/preprocessing";
 export declare enum WriteMode {
     write = 0,
     append = 1
@@ -55,22 +54,11 @@ export interface DB<L extends Locality, Annotation, Quantification> {
      * Reads a DatasetAP from DB
      * @param fromID
      */
-    readDatasetAP(fromID: string): Promise<DatasetAP>;
+    readDataset(fromID: string): Promise<Dataset>;
     /**
      * Writes a DatasetAP to DB
      * @param toID
      * @param dataset
      */
-    writeDatasetAP(toID: string, dataset: DatasetAP): Promise<void>;
-    /**
-     * Reads a DatasetAFE from DB
-     * @param fromID
-     */
-    readDatasetAFE(fromID: string): Promise<DatasetAFE>;
-    /**
-     * Writes a DatasetAFE to DB
-     * @param toID
-     * @param dataset
-     */
-    writeDatasetAFE(toID: string, dataset: DatasetAFE): Promise<void>;
+    writeDataset(toID: string, dataset: Dataset): Promise<void>;
 }

@@ -1,5 +1,5 @@
 import { Preprocessor } from "./preprocessing";
-import { Locality } from "bugfinder-framework";
+import { Locality } from "../index";
 import { DB } from "../00-shared/db";
 export declare class PreprocessingFactory<L extends Locality, Quantification, Annotation> {
     preprocessor: Preprocessor<L, Annotation, Quantification>;
