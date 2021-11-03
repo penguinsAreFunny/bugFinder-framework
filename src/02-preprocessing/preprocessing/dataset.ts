@@ -1,27 +1,19 @@
+import {TraceAP} from "./traceAP";
+
 /**
- * Representation of a set of data used in machine learning
- * where data contains an array of features and target an array of targets (classes/labels).
- * Based on python sklearn datasets representation.
+ * Dataset after preprocessing
+ * This contains traceability information about the recording and preprocessing strategy
  */
-export interface Dataset {
-    /**
-     * Features used in machine learning
-     */
-    data: Array<number[]>,
+export class Dataset {
 
-    /**
-     * Targets (classes/labels) used in machine learning
-     */
-    target: Array<number[]>,
+    constructor(public data: Array<number[]>,
+                public target: Array<number[]>,
+                public keys: string[],
+                public featureNames: string[],
+                public targetNames: string[],
+                public description: string,
+                public traceAP: TraceAP
+    ) {
 
-    /**
-     * Keys of the localities
-     */
-    keys: string[]
-
-    featureNames: string[],
-    targetNames: string[],
-    description: string
-
+    }
 }
-

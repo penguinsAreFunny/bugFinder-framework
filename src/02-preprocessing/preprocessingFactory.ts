@@ -1,7 +1,7 @@
 import {inject, injectable} from "inversify";
 import {PREPROCESSING_TYPES} from "./TYPES";
 import {Preprocessor} from "./preprocessing";
-import {Locality} from "bugfinder-framework";
+import {Locality} from "../index";
 import {DB} from "../00-shared/db";
 
 @injectable()
