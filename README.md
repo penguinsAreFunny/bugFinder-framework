@@ -12,22 +12,12 @@ you should be able to automatically analyse code and find localities with high b
 
 # Table of contents  
 - [BugFinder-Framework](#bugfinder-framework)
-- [Table of Contents](#table-of-contents)
+- [Table of contents](#table-of-contents)
 - [Quick start](#quick-start)
 - [Introduction](#introduction)
   * [Recording by example](#recording-by-example)
   * [Preprocessing by example](#preprocessing-by-example)
   * [Training](#training)
-- [Component realisations available](#component-realisations-available)
-  * [Shared](#shared)
-    + [DB](#db)
-  * [Recording](#recording)
-    + [LocalityRecorder (and therefore localities)](#localityrecorder--and-therefore-localities-)
-    + [LocalityPreprocessors](#localitypreprocessors)
-    + [Quantifier](#quantifier)
-    + [Annotator](#annotator)
-  * [Preprocessor](#preprocessor)
-  * [Machine Learning](#machine-learning)
 <!--<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>-->
 
 # Quick start
